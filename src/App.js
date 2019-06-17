@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+      <h1>Mario for the win!</h1>
+      <p>
+        One of my role models,
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://twitter.com/chloecondon/status/1108738908999700480"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Chloe Condon,
         </a>
-      </header>
+        said "In my opinion, your chosen Mario Kart player says WAY more than a
+        zodiac sign does." I would have to agree. That tweet spawned a few
+        projects, and they're great, but they focus on newer iterations of Mario
+        Kart. At the risk of sounding like my father, back in my day, we didn't
+        have that many options. That's what led me to make this.
+      </p>
     </div>
   );
 }
