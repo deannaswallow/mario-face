@@ -1,10 +1,12 @@
-import React from "react";
+import * as React from "react";
+import { Container } from "nes-react";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <h1>Mario for the win!</h1>
+      <Container>This is a container!</Container>
       <p>
         One of my role models,
         <a
