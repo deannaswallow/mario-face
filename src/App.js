@@ -1,27 +1,37 @@
 import * as React from "react";
-import { Container } from "nes-react";
+import { Container, Sprite, Radios } from "nes-react";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Mario for the win!</h1>
-      <Container>This is a container!</Container>
+      <h1>What Your Mario Kart Play Style Says About You!</h1>
+      <Sprite sprite={"mario"} />
       <p>
-        One of my role models,
-        <a
-          href="https://twitter.com/chloecondon/status/1108738908999700480"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Chloe Condon,
-        </a>
-        said "In my opinion, your chosen Mario Kart player says WAY more than a
-        zodiac sign does." I would have to agree. That tweet spawned a few
-        projects, and they're great, but they focus on newer iterations of Mario
-        Kart. At the risk of sounding like my father, back in my day, we didn't
-        have that many options. That's what led me to make this.
+        As was discussed here, the character you choose when playing Mario Kart
+        says a lot about who you are at heart. I would argue that your favorite
+        item also says a lot. So what does your favorite character and item in
+        Mario Kart say about you? Answer the questions below to find out!
       </p>
+      <h3>1. Which character is your favorite to use?</h3>
+      <Container rounded>
+        <Radios
+          options={[
+            {
+              value: "mario",
+              label: "Mario"
+            },
+            {
+              value: "luigi",
+              label: "Luigi"
+            }
+          ]}
+        />
+      </Container>
+      <h3>2. Which item is your favorite to use?</h3>
+      <Container rounded>Item info here</Container>
+      <h2>What your choices say about you as a person:</h2>
+      <Container rounded>Profile here</Container>
     </div>
   );
 }
