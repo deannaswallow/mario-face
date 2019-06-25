@@ -31,7 +31,7 @@ class App extends React.Component {
         </p>
         <h3>1. Which character is your favorite to use?</h3>
         <Container rounded>
-          <form>
+          <form className="character-choice">
             <label>
               <input
                 type="radio"
@@ -43,7 +43,6 @@ class App extends React.Component {
               />
               Mario
             </label>
-
             <label>
               <input
                 type="radio"
@@ -55,7 +54,6 @@ class App extends React.Component {
               />
               Luigi
             </label>
-
             <label>
               <input
                 type="radio"
@@ -66,6 +64,61 @@ class App extends React.Component {
                 className="character-choice"
               />
               Princess Peach
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="characters"
+                value="option4"
+                checked={this.state.selectedOption === "option4"}
+                onChange={this.handleOptionChange}
+                className="character-choice"
+              />
+              Toad
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="characters"
+                value="option5"
+                checked={this.state.selectedOption === "option5"}
+                onChange={this.handleOptionChange}
+                className="character-choice"
+              />
+              Yoshi
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="characters"
+                value="option6"
+                checked={this.state.selectedOption === "option6"}
+                onChange={this.handleOptionChange}
+                className="character-choice"
+              />
+              Bowser
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="characters"
+                value="option7"
+                checked={this.state.selectedOption === "option7"}
+                onChange={this.handleOptionChange}
+                className="character-choice"
+              />
+              Donkey Kong Jr.
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="characters"
+                value="option8"
+                checked={this.state.selectedOption === "option8"}
+                onChange={this.handleOptionChange}
+                className="character-choice"
+              />
+              Koopa Troopa
             </label>
           </form>
         </Container>
