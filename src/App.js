@@ -8,12 +8,19 @@ class App extends React.Component {
   state = {
     characters: characters,
     items: items,
-    selectedOption: "Mario"
+    selectedCharacter: "Mario",
+    selectedItem: "Banana"
   };
 
-  handleOptionChange = changeEvent => {
+  handleCharacterChange = changeEvent => {
     this.setState({
-      selectedOption: changeEvent.target.value
+      selectedCharacter: changeEvent.target.value
+    });
+  };
+
+  handleItemChange = changeEvent => {
+    this.setState({
+      selectedItem: changeEvent.target.value
     });
   };
 
@@ -46,8 +53,7 @@ class App extends React.Component {
                   type="radio"
                   name="characters"
                   value={character.name}
-                  // checked={false}
-                  onChange={this.handleOptionChange}
+                  onChange={this.handleCharacterChange}
                   className="character-choice"
                 />
                 {character.name}
@@ -57,10 +63,26 @@ class App extends React.Component {
           </form>
         </Container>
         <h3>2. Which item is your favorite to use?</h3>
-        <Container rounded>Item info here</Container>
+        <Container rounded>
+          <form className="character-choice">
+            {Object.values(items).map(item => (
+              <label key={item.name}>
+                <input
+                  type="radio"
+                  name="characters"
+                  value={item.name}
+                  onChange={this.handleItemChange}
+                  className="character-choice"
+                />
+                {item.name}
+                <img src={item.image} alt={item.name} />
+              </label>
+            ))}
+          </form>
+        </Container>
         <h2>What your choices say about you as a person:</h2>
         <Container rounded>
-          {this.state.selectedOption === "Yoshi" ? "Yay" : "Nope"}
+          {this.state.selectedCharacter === "Yoshi" ? "Yay" : "Nope"}
         </Container>
       </div>
     );
