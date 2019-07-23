@@ -16,12 +16,20 @@ class App extends React.Component {
     this.setState({
       selectedCharacter: changeEvent.target.value
     });
+    const newKey = `${changeEvent.target.value}${this.state.selectedItem}`;
+    this.displayProfile(newKey);
   };
 
   handleItemChange = changeEvent => {
     this.setState({
       selectedItem: changeEvent.target.value
     });
+    const newKey = `${this.state.selectedCharacter}${changeEvent.target.value}`;
+    this.displayProfile(newKey);
+  };
+
+  displayProfile = newKey => {
+    alert(`New key is ${newKey}`);
   };
 
   render() {
@@ -84,6 +92,7 @@ class App extends React.Component {
         <Container rounded>
           {this.state.selectedCharacter === "Yoshi" ? "Yay" : "Nope"}
         </Container>
+        <p className="disclaimer">Images used are the property of Nintendo.</p>
       </div>
     );
   }
