@@ -3,13 +3,15 @@ import { Container, Sprite } from "nes-react";
 import "./App.css";
 import characters from "./characters";
 import items from "./items";
+import profiles from "./profiles.json";
 
 class App extends React.Component {
   state = {
     characters: characters,
     items: items,
     selectedCharacter: "Mario",
-    selectedItem: "Banana"
+    selectedItem: "Banana",
+    profile: "Make your selection to see your profile!"
   };
 
   handleCharacterChange = changeEvent => {
@@ -29,7 +31,15 @@ class App extends React.Component {
   };
 
   displayProfile = newKey => {
-    alert(`New key is ${newKey}`);
+    for (let key in profiles) {
+      if (profiles.hasOwnProperty(key)) {
+        if (newKey === key) {
+          this.setState({
+            profile: profiles[key]
+          });
+        }
+      }
+    }
   };
 
   render() {
@@ -72,7 +82,7 @@ class App extends React.Component {
         </Container>
         <h3>2. Which item is your favorite to use?</h3>
         <Container rounded>
-          <form className="character-choice">
+          <form className="item-choice">
             {Object.values(items).map(item => (
               <label key={item.name}>
                 <input
@@ -80,7 +90,7 @@ class App extends React.Component {
                   name="characters"
                   value={item.name}
                   onChange={this.handleItemChange}
-                  className="character-choice"
+                  className="item-choice"
                 />
                 {item.name}
                 <img src={item.image} alt={item.name} />
@@ -89,9 +99,7 @@ class App extends React.Component {
           </form>
         </Container>
         <h2>What your choices say about you as a person:</h2>
-        <Container rounded>
-          {this.state.selectedCharacter === "Yoshi" ? "Yay" : "Nope"}
-        </Container>
+        <Container rounded>{this.state.profile}</Container>
         <p className="disclaimer">Images used are the property of Nintendo.</p>
       </div>
     );
