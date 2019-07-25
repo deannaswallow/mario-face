@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, Sprite } from "nes-react";
+import { Container, Sprite, List } from "nes-react";
 import "./App.css";
 import characters from "./characters";
 import items from "./items";
@@ -100,7 +100,49 @@ class App extends React.Component {
         </Container>
         <h2>What your choices say about you as a person:</h2>
         <Container rounded>{this.state.profile}</Container>
-        <p className="disclaimer">Images used are the property of Nintendo.</p>
+        <Container rounded title="Credits and Inspiration!" className="credits">
+          <List solid>
+            <li>
+              <a
+                href="https://github.com/nostalgic-css/NES.css"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NES.css
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/bschulte/nes-react"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                nes-react
+              </a>
+            </li>
+            <li>
+              Info from{" "}
+              <a
+                href="https://mariokart.fandom.com/wiki/Super_Mario_Kart"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Super Mario Kart Wiki
+              </a>
+            </li>
+            <li>
+              Additional inspiration from{" "}
+              <a
+                href="https://stephenradachy.github.io/Mario-Kart-Astrology/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Stephen Radachy
+              </a>
+            </li>
+            <li>Images used are the property of Nintendo.</li>
+          </List>
+        </Container>
       </div>
     );
   }
