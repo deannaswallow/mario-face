@@ -80,6 +80,7 @@ class App extends React.Component {
             ))}
           </form>
         </Container>
+        <br />
         <h3>2. Which item is your favorite to use?</h3>
         <Container rounded>
           <form className="item-choice">
@@ -98,8 +99,12 @@ class App extends React.Component {
             ))}
           </form>
         </Container>
+        <br />
         <h2>What your choices say about you as a person:</h2>
-        <Container rounded>{this.state.profile}</Container>
+        <Container rounded className="profile">
+          <h4>{this.state.profile}</h4>
+        </Container>
+        <br />
         <Container rounded className="credits">
           <h4>Credits and Inspiration!</h4>
           <List solid>
