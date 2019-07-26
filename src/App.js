@@ -46,7 +46,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>What Your Mario Kart Play Style Says About You!</h1>
-        <Sprite sprite={"mario"} />
+        <Sprite sprite={"mario"} className="sprite" />
         <p>
           As was discussed{" "}
           <a
@@ -66,7 +66,7 @@ class App extends React.Component {
         <Container rounded>
           <form className="character-choice">
             {Object.values(characters).map(character => (
-              <label key={character.name}>
+              <label key={character.name} className="radios">
                 <input
                   type="radio"
                   name="characters"
@@ -74,7 +74,7 @@ class App extends React.Component {
                   onChange={this.handleCharacterChange}
                   className="character-choice"
                 />
-                {character.name}
+                <span>{character.name}</span>
                 <img src={character.image} alt={character.name} />
               </label>
             ))}
@@ -84,7 +84,7 @@ class App extends React.Component {
         <Container rounded>
           <form className="item-choice">
             {Object.values(items).map(item => (
-              <label key={item.name}>
+              <label key={item.name} className="radios">
                 <input
                   type="radio"
                   name="characters"
@@ -92,7 +92,7 @@ class App extends React.Component {
                   onChange={this.handleItemChange}
                   className="item-choice"
                 />
-                {item.name}
+                <span>{item.name}</span>
                 <img src={item.image} alt={item.name} />
               </label>
             ))}
@@ -100,7 +100,8 @@ class App extends React.Component {
         </Container>
         <h2>What your choices say about you as a person:</h2>
         <Container rounded>{this.state.profile}</Container>
-        <Container rounded title="Credits and Inspiration!" className="credits">
+        <Container rounded className="credits">
+          <h4>Credits and Inspiration!</h4>
           <List solid>
             <li>
               <a
