@@ -20,6 +20,7 @@ The aim of this project was to make something fun that would let me practice usi
 - React - version 16.8.6
 - react-dom - version 16.8.6
 - react-scripts - version 3.0.1
+- Bootstrap - version 4.3.1
 - nes-react - version 1.0.2
 - HTML5, CSS3, JavaScript
 
@@ -47,7 +48,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Status
 
 Project is: _in progress_ <br>
-I am working on making this more mobile-friendly.
+I am working on adjusting the layout.
 
 ## Contact
 
